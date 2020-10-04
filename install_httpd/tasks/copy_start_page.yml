@@ -1,0 +1,8 @@
+---
+
+- name: Create index.html
+  copy:
+    src: "{{ start_page }}"
+    dest: "{{ dest_path }}{{ start_page }}"
+  notify:
+    - Restart httpd

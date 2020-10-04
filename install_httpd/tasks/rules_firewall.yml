@@ -1,0 +1,7 @@
+---
+
+- name: Add rules into firewall
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled

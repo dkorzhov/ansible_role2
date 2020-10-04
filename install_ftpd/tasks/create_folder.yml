@@ -1,0 +1,10 @@
+---
+
+- name: Create a folder if it does not exist
+  file:
+    path: "{{ anon_root }}/pub"
+    state: directory
+    mode: '0755'
+    owner: ftp
+  notify:
+    - Restart ftpd

@@ -1,0 +1,15 @@
+---
+
+- name: Start ftpd
+  service:
+    name: vsftpd
+    state: started
+    enabled: yes
+
+- block:
+    - name: Check ftpd status
+      service_facts:
+
+    - debug:
+        var: ansible_facts.services["vsftpd.service"].state
+  when: check_status_ftpd == true

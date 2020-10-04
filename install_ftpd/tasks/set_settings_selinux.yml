@@ -1,0 +1,24 @@
+---
+
+- name: Enable SELinux
+  selinux:
+    policy: targeted
+    state: enforcing
+
+- name: Set ftpd_can_network_connect flag on and keep it persistent across reboots
+  seboolean:
+    name: ftpd_anon_write
+    state: yes
+    persistent: yes
+
+- name: Set ftpd_can_network_connect flag on and keep it persistent across reboots
+  seboolean:
+    name:  tftp_home_dir
+    state: yes
+    persistent: yes
+
+- name: Set ftpd_can_network_connect flag on and keep it persistent across reboots
+  seboolean:
+    name: ftpd_full_access
+    state: yes
+    persistent: yes

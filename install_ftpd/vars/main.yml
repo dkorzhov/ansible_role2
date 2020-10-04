@@ -1,0 +1,23 @@
+---
+# vars file for install_ftpd
+
+conf_file: vsftpd
+dest_path: /etc/vsftpd/
+
+check_status_ftpd: true
+
+packages:
+  - firewalld
+  - vsftpd
+  - ftp
+
+anonymous_enable: "YES"
+anon_upload_enable: "YES"
+
+anon_root: "/var/ftp"
+
+pasv_address: "{{ hostvars[inventory_hostname]['ansible_host'] }}"
+
+
+pasv_min_port: 49152
+pasv_max_port: 65534

@@ -1,0 +1,11 @@
+---
+# vars file for install_httpd
+
+start_page: index.html
+dest_path: /var/www/html/
+
+check_status_httpd: true
+
+packages:
+  - firewalld
+  - httpd

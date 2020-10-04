@@ -1,0 +1,7 @@
+---
+# handlers file for install_ftpd
+
+- name: Restart ftpd
+  ansible.builtin.service:
+    name: vsftpd
+    state: restarted

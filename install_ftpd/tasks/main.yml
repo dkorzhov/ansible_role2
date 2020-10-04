@@ -1,0 +1,9 @@
+---
+# tasks file for install_ftpd
+
+- include: install_packages.yml
+- include: copy_config.yml
+- include: set_settings_selinux.yml
+- include: create_folder.yml
+- include: start_ftpd.yml
+- include: rules_firewall.yml

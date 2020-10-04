@@ -1,0 +1,8 @@
+---
+
+- name: Copy vsftpd.conf
+  template:
+    src: "{{ conf_file }}.j2"
+    dest: "{{ dest_path }}{{ conf_file }}.conf"
+  notify:
+    - Restart ftpd

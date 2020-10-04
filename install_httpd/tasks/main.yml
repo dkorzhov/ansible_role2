@@ -1,0 +1,9 @@
+---
+# tasks file for install_httpd
+
+- include: install_packages.yml
+- include: start_httpd.yml
+- include: copy_start_page.yml
+- include: rules_firewall.yml
+
+...

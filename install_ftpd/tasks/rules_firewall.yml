@@ -1,0 +1,12 @@
+---
+
+- name: Add rules into firewall
+  firewalld:
+    service: ftp
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: "{{pasv_min_port}}-{{pasv_max_port}}/tcp"
+    permanent: true
+    state: enabled
